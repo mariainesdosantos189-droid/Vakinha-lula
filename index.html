@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIVA O PT! ❤️ — Financiamento coletivo</title>
+<meta name="description" content="Conheça a iniciativa Viva o PT e acompanhe o planejamento, as contribuições e a prestação de contas da campanha.">
+<meta property="og:title" content="VIVA O PT! ❤️">
+<meta property="og:description" content="Conheça a iniciativa Viva o PT e acompanhe o planejamento, as contribuições e a prestação de contas da campanha.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#E31B23;--white:#FFF;--green:#168447;--yellow:#FFD447;--bg:#F5F5F5;--ink:#252525;--mute:#5b5b5b;--r:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;font:400 17px/1.55 "Source Sans 3",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+h1,h2,h3,.logo{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--green)}:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:5;background:var(--white);border-bottom:3px solid var(--red)}
+header .wrap{display:flex;align-items:center;gap:16px;height:60px}
+.logo{font-weight:800;font-size:22px;color:var(--red);text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+nav a{padding:8px 10px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap;border-radius:10px}
+nav a:hover{background:var(--bg)}
+.hero{background:var(--red);color:var(--white);padding:56px 0 48px;background-image:linear-gradient(135deg,transparent 0 78%,var(--green) 78% 88%,var(--yellow) 88% 100%)}
+.hero h1{font-size:clamp(44px,11vw,96px);font-weight:800;letter-spacing:-.02em}
+.hero .sub{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:clamp(20px,4vw,30px);margin:14px 0 10px;max-width:22ch}
+.hero p{max-width:52ch;margin:0 0 24px;opacity:.95}
+.btn{display:inline-block;border:0;border-radius:14px;padding:15px 22px;font:800 16px "Bricolage Grotesque",sans-serif;cursor:pointer;text-decoration:none;text-align:center;transition:transform .15s}
+.btn:active{transform:scale(.98)}
+.btn.y{background:var(--yellow);color:var(--ink)}.btn.w{background:transparent;color:var(--white);border:2px solid var(--white)}
+.btn.g{background:var(--green);color:var(--white);width:100%}.btn[disabled]{opacity:.5;cursor:not-allowed}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.dates{display:grid;gap:14px;margin-top:32px}
+.card{background:var(--white);border-radius:var(--r);padding:22px;color:var(--ink)}
+.dates .card{border-left:8px solid var(--yellow)}
+.dates h3{font-size:22px;margin-bottom:6px}.dates p{margin:0;color:var(--mute);font-size:16px}
+.org{margin-top:22px;font-size:14px;opacity:.9;max-width:70ch}
+section{padding:52px 0}section h2{font-size:clamp(28px,6vw,40px);margin-bottom:18px}
+.alt{background:var(--white)}
+.grid{display:grid;gap:14px}
+.kpis{grid-template-columns:repeat(2,1fr)}
+.kpi b{display:block;font:800 26px "Bricolage Grotesque",sans-serif}.kpi span{font-size:14px;color:var(--mute)}
+.bar{height:20px;background:#e3e3e3;border-radius:99px;overflow:hidden;margin:6px 0 18px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--yellow));transition:width .8s}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.chip{border:2px solid var(--ink);background:var(--white);border-radius:14px;padding:14px 6px;font:800 18px "Bricolage Grotesque",sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--white)}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input[type=text],input[type=email],input[type=tel],input[type=number]{width:100%;padding:14px;border:2px solid #bbb;border-radius:12px;font:inherit;background:var(--white)}
+input:focus{border-color:var(--ink)}
+.chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin:14px 0}.chk input{margin-top:5px;width:20px;height:20px}
+.note{font-size:15px;color:var(--mute)}.warn{background:#fff6d6;border-left:6px solid var(--yellow);padding:12px 14px;border-radius:10px;font-size:15px;margin:12px 0}
+.err{color:#b00020;font-weight:600;margin:10px 0 0}
+.pix code{display:block;word-break:break-all;background:var(--bg);padding:12px;border-radius:10px;font-size:13px;margin:10px 0}
+.pix img{max-width:220px;width:100%;display:block;margin:10px auto}
+.status{font-weight:600;padding:12px;border-radius:10px;background:#fff6d6}.status.ok{background:#d9f2e3}.status.bad{background:#fde0e0}
+details{background:var(--bg);border-radius:12px;padding:14px 16px;margin-bottom:10px}summary{font-weight:600;cursor:pointer}
+.empty{padding:22px;border:2px dashed #bbb;border-radius:var(--r);color:var(--mute);text-align:center}
+.tag{display:inline-block;background:var(--yellow);border-radius:8px;padding:2px 8px;font-weight:600;font-size:14px}
+footer{background:var(--ink);color:#ddd;padding:36px 0;font-size:15px}footer a{color:var(--yellow)}
+.hidden{display:none}
+@media(min-width:760px){.dates,.kpis{grid-template-columns:repeat(2,1fr)}.kpis{grid-template-columns:repeat(5,1fr)}.two{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#topo">VIVA O PT! ❤️</a>
+<nav aria-label="Principal"><a href="#sobre">Sobre</a><a href="#contribuir">Contribuir</a><a href="#arrecadacao">Arrecadação</a><a href="#eventos">Cidades e eventos</a><a href="#transparencia">Transparência</a><a href="#atualizacoes">Atualizações</a><a href="#faq">Perguntas</a><a href="#contato">Contato</a></nav></div></header>
+
+<main id="topo">
+<div class="hero"><div class="wrap">
+<h1>VIVA O PT! ❤️</h1>
+<div class="sub">Lula, o Norte e Nordeste querem comemorar com você!</div>
+<p>Uma iniciativa de mobilização para organizar encontros e celebrações populares, com planejamento logístico para cidades das regiões Norte e Nordeste.</p>
+<div class="btns"><a class="btn y" href="#contribuir">FAZER MINHA CONTRIBUIÇÃO</a><a class="btn w" href="#arrecadacao">ACOMPANHAR A ARRECADAÇÃO</a></div>
+<div class="dates">
+<div class="card"><h3>31 DE DEZEMBRO DE 2026</h3><p>Possível chegada à região — aguardando confirmação oficial.</p></div>
+<div class="card"><h3>A PARTIR DE 1º DE JANEIRO DE 2027</h3><p>Início previsto das atividades de mobilização nas cidades participantes.</p></div>
+</div>
+<p class="org" id="orgLine"></p>
+</div></div>
+
+<section id="sobre"><div class="wrap">
+<h2>Sobre a campanha</h2>
+<div class="two"><div>
+<p><b>Finalidade:</b> arrecadar contribuições para custear despesas logísticas de uma equipe responsável pela organização de eventos e celebrações populares nas regiões Norte e Nordeste.</p>
+<p><b>Meta inicial:</b> R$ 100.000,00.</p>
+<p>Data mencionada no planejamento da mobilização, aguardando confirmação oficial: 31 de dezembro de 2026 (possível chegada).</p>
+<p>Estamos planejando atividades e celebrações populares nas regiões Norte e Nordeste a partir de 1º de janeiro de 2027. As datas, os locais e a realização dos eventos em cada cidade serão divulgados à medida que forem confirmados.</p>
+</div>
+<div class="card"><h3>Quem organiza</h3><p id="orgBox"></p>
+<p class="note">Esta iniciativa não é apresentada como oficialmente autorizada pelo PT, por Lula ou por sua equipe. A confirmação de cada evento depende de informações verificáveis.</p></div></div>
+</div></section>
+
+<section id="contribuir" class="alt"><div class="wrap two">
+<div>
+<h2>Contribuir</h2>
+<div class="warn" id="benefBox"></div>
+<form id="f" novalidate>
+<div class="chips" role="group" aria-label="Valores sugeridos">
+<button type="button" class="chip" data-v="10" aria-pressed="false">R$ 10</button>
+<button type="button" class="chip" data-v="25" aria-pressed="false">R$ 25</button>
+<button type="button" class="chip" data-v="50" aria-pressed="true">R$ 50</button>
+<button type="button" class="chip" data-v="100" aria-pressed="false">R$ 100</button>
+<button type="button" class="chip" data-v="other" aria-pressed="false">Outro valor</button></div>
+<div id="otherWrap" class="hidden"><label for="amt">Valor (R$ 5 a R$ 10.000)</label><input id="amt" type="number" inputmode="decimal" min="5" max="10000" step="0.01"></div>
+<label for="name">Nome</label><input id="name" type="text" autocomplete="name" required>
+<label for="email">E-mail (para o recibo)</label><input id="email" type="email" autocomplete="email" required>
+<label for="phone">Telefone com DDD</label><input id="phone" type="tel" autocomplete="tel" required>
+<p class="note">O provedor de pagamento exige nome, e-mail e telefone. Seu nome e valor nunca são exibidos publicamente.</p>
+<label class="chk"><input id="terms" type="checkbox"><span>Li e aceito os <a href="#termos">termos de contribuição</a> e a <a href="#privacidade">política de privacidade</a>.</span></label>
+<button class="btn g" id="go" type="submit">CONTINUAR PARA PAGAMENTO</button>
+<p class="err" id="err" role="alert"></p>
+</form>
+</div>
+<div id="pixBox" class="card pix hidden" aria-live="polite">
+<h3>Pague com Pix</h3>
+<img id="qr" alt="QR Code Pix" class="hidden">
+<p class="note">Pix copia e cola:</p><code id="code"></code>
+<button class="btn y" id="copy" type="button">Copiar código</button>
+<p class="status" id="st" style="margin-top:14px">Aguardando confirmação do pagamento…</p>
+<p class="note">Esta página não confirma o pagamento sozinha: ele só é contabilizado depois de confirmado pelo provedor.</p>
+</div>
+</div></section>
+
+<section id="arrecadacao"><div class="wrap">
+<h2>Acompanhar arrecadação</h2>
+<div class="grid kpis">
+<div class="card kpi"><b id="kTarget">R$ 100.000,00</b><span>Meta</span></div>
+<div class="card kpi"><b id="kRaised">R$ 0,00</b><span>Arrecadado</span></div>
+<div class="card kpi"><b id="kPct">0%</b><span>Da meta</span></div>
+<div class="card kpi"><b id="kLeft">R$ 100.000,00</b><span>Faltam</span></div>
+<div class="card kpi"><b id="kCount">0</b><span>Contribuições confirmadas</span></div></div>
+<div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="bar"><i id="barI"></i></div>
+<p class="note" id="meta"></p>
+</div></section>
+
+<section id="eventos" class="alt"><div class="wrap">
+<h2>Cidades e eventos</h2>
+<p>Todas as cidades das duas regiões são áreas de planejamento da mobilização. Nenhuma tem evento confirmado até que haja fonte verificável.</p>
+<div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">
+<div class="card"><b>Norte</b><br>AC · AP · AM · PA · RO · RR · TO</div>
+<div class="card"><b>Nordeste</b><br>AL · BA · CE · MA · PB · PE · PI · RN · SE</div></div>
+<div class="empty" style="margin-top:16px">Nenhum evento cadastrado ainda. Status possíveis: <span class="tag">Em planejamento</span> <span class="tag">Aguardando confirmação</span> <span class="tag">Confirmado oficialmente</span> <span class="tag">Realizado</span> <span class="tag">Cancelado ou adiado</span></div>
+</div></section>
+
+<section id="transparencia"><div class="wrap">
+<h2>TRANSPARÊNCIA: CADA CONTRIBUIÇÃO IMPORTA</h2>
+<div class="grid kpis" style="grid-template-columns:repeat(auto-fit,minmax(170px,1fr))">
+<div class="card kpi"><b id="tRaised">R$ 0,00</b><span>Pagamentos confirmados</span></div>
+<div class="card kpi"><b id="tRef">R$ 0,00</b><span>Reembolsos</span></div>
+<div class="card kpi"><b>R$ 0,00</b><span>Despesas realizadas</span></div></div>
+<div class="empty" style="margin-top:16px">Orçamento por categoria, relatórios e comprovantes serão publicados aqui. Estimativas serão sempre identificadas como estimativas, separadas de despesas efetivamente pagas.</div>
+<p class="note">Organizador e beneficiário financeiro: veja em <a href="#sobre">Sobre a campanha</a>. Nenhum dado bancário privado ou de contribuintes será divulgado. A destinação de eventual saldo remanescente será informada nesta página.</p>
+</div></section>
+
+<section id="atualizacoes" class="alt"><div class="wrap"><h2>Atualizações da campanha</h2><div class="empty">Ainda não há comunicados publicados.</div>
+<div class="btns" style="margin-top:18px"><a class="btn y" id="wa" target="_blank" rel="noopener">Compartilhar no WhatsApp</a><button class="btn y" id="cp" type="button">Copiar link</button></div></div></section>
+
+<section id="faq"><div class="wrap"><h2>Perguntas frequentes</h2>
+<details><summary>Esta campanha é oficial do PT ou do Lula?</summary><p>Não. A campanha não afirma autorização oficial do PT, de Lula ou de sua equipe.</p></details>
+<details><summary>A chegada em 31/12/2026 está confirmada?</summary><p>Não. É uma data mencionada no planejamento, aguardando confirmação oficial.</p></details>
+<details><summary>Quando o valor entra na arrecadação?</summary><p>Somente após o pagamento ser confirmado pelo provedor. Cobranças pendentes, expiradas, canceladas ou reembolsadas não contam.</p></details>
+<details><summary>Meu nome aparece publicamente?</summary><p>Não. Não exibimos nomes nem valores individuais.</p></details>
+</div></section>
+
+<section id="contato" class="alt"><div class="wrap"><h2>Contato</h2><p id="contactBox"></p></div></section>
+
+<section id="privacidade"><div class="wrap"><h2>Política de privacidade</h2>
+<p>Coletamos nome, e-mail e telefone apenas para gerar a cobrança Pix e emitir o recibo, exigidos pelo provedor de pagamento (AmploPay). Não pedimos CPF nem outros documentos. Em nosso banco guardamos somente: valor, referência, status e datas da contribuição. Nome, e-mail e telefone não são exibidos publicamente. Você pode pedir informações ou exclusão pelo contato da campanha, conforme a LGPD.</p></div></section>
+
+<section id="termos" class="alt"><div class="wrap"><h2>Termos de contribuição</h2>
+<p>As contribuições custeiam despesas logísticas descritas em “Sobre a campanha”. Datas e eventos são planejamento e podem mudar. Contribuições são confirmadas somente pelo provedor de pagamento. Pedidos de reembolso devem ser feitos pelo contato da campanha. As prestações de contas serão publicadas em Transparência.</p></div></section>
+</main>
+
+<footer><div class="wrap"><b>VIVA O PT! ❤️</b><p id="footOrg"></p><p><a href="#transparencia">Transparência</a> · <a href="#privacidade">Privacidade</a> · <a href="#termos">Termos de contribuição</a></p></div></footer>
+
+<script>
+// >>> PREENCHA ANTES DE PUBLICAR (o botão de pagamento fica bloqueado enquanto houver [colchetes]) <<<
+const CONFIG={organizer:"[NOME DO ORGANIZADOR]",beneficiary:"[NOME DO BENEFICIÁRIO FINANCEIRO]",contact:"[E-MAIL/WHATSAPP DE CONTATO]"};
+const $=id=>document.getElementById(id);
+const brl=n=>Number(n).toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const ready=!/\[/.test(CONFIG.organizer+CONFIG.beneficiary+CONFIG.contact);
+$("orgLine").textContent="Iniciativa organizada por "+CONFIG.organizer+". A confirmação de cada evento depende de informações verificáveis.";
+$("orgBox").textContent="Organizador: "+CONFIG.organizer+". Beneficiário dos recursos: "+CONFIG.beneficiary+".";
+$("benefBox").textContent="Antes de pagar: os recursos vão para "+CONFIG.beneficiary+", organizado por "+CONFIG.organizer+", para despesas logísticas de eventos nas regiões Norte e Nordeste.";
+$("contactBox").textContent="Contato oficial: "+CONFIG.contact;$("footOrg").textContent="Organizador: "+CONFIG.organizer+" · Contato: "+CONFIG.contact;
+const url=location.href.split("#")[0];
+$("wa").href="https://wa.me/?text="+encodeURIComponent("Conheça a iniciativa Viva o PT e acompanhe o planejamento, as contribuições e a prestação de contas da campanha. "+url);
+$("cp").onclick=async()=>{try{await navigator.clipboard.writeText(url);$("cp").textContent="Link copiado"}catch(e){prompt("Copie o link:",url)}};
+
+async function stats(){
+ let s={target:100000,raised:0,count:0,refunded:0,deadline:null,updatedAt:null};
+ try{s=await (await fetch("/api/stats")).json()}catch(e){}
+ const pct=s.target?Math.min(100,s.raised/s.target*100):0, left=Math.max(0,s.target-s.raised);
+ $("kTarget").textContent=brl(s.target);$("kRaised").textContent=brl(s.raised);$("kLeft").textContent=brl(left);
+ $("kPct").textContent=(s.raised/s.target*100).toFixed(1).replace(".",",")+"%";$("kCount").textContent=s.count;
+ $("barI").style.width=pct+"%";$("bar").setAttribute("aria-valuenow",Math.round(pct));
+ $("tRaised").textContent=brl(s.raised);$("tRef").textContent=brl(s.refunded||0);
+ $("meta").textContent="Encerramento: "+(s.deadline?new Date(s.deadline).toLocaleDateString("pt-BR"):"a definir")+" · Última atualização: "+(s.updatedAt?new Date(s.updatedAt).toLocaleString("pt-BR"):"sem pagamentos confirmados ainda");
+}
+stats();
+
+let amount=50;
+document.querySelectorAll(".chip").forEach(c=>c.onclick=()=>{
+ document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===c));
+ const o=c.dataset.v==="other";$("otherWrap").classList.toggle("hidden",!o);
+ if(o){$("amt").focus();amount=Number($("amt").value)||0}else amount=Number(c.dataset.v)});
+$("amt").oninput=e=>amount=Number(e.target.value);
+if(!ready){$("go").disabled=true;$("err").textContent="Pagamentos bloqueados: preencha organizador, beneficiário e contato no código (CONFIG)."}
+
+$("f").onsubmit=async e=>{
+ e.preventDefault();$("err").textContent="";
+ if(!(amount>=5&&amount<=10000))return $("err").textContent="Informe um valor entre R$ 5 e R$ 10.000.";
+ if(!$("terms").checked)return $("err").textContent="Aceite os termos para continuar.";
+ $("go").disabled=true;$("go").textContent="Gerando cobrança…";
+ try{
+  const r=await fetch("/api/create-payment",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({amount,name:$("name").value,email:$("email").value,phone:$("phone").value,terms:true})});
+  const d=await r.json();
+  if(!r.ok)throw new Error(d.message||"Erro ao gerar a cobrança.");
+  $("code").textContent=d.code;$("pixBox").classList.remove("hidden");
+  if(d.image){$("qr").src=d.image;$("qr").classList.remove("hidden")}
+  $("pixBox").scrollIntoView({behavior:"smooth"});poll(d.id);
+ }catch(x){$("err").textContent=x.message}
+ $("go").disabled=!ready;$("go").textContent="CONTINUAR PARA PAGAMENTO";
+};
+$("copy").onclick=async()=>{try{await navigator.clipboard.writeText($("code").textContent);$("copy").textContent="Copiado!"}catch(e){}};
+const MSG={pending:["Aguardando confirmação do pagamento…",""],paid:["Pagamento confirmado. Obrigado pela contribuição!","ok"],expired:["Este Pix expirou. Gere uma nova cobrança.","bad"],cancelled:["Pagamento cancelado.","bad"],failed:["Não foi possível concluir o pagamento.","bad"],refunded:["Pagamento reembolsado.","bad"]};
+function poll(id,n=0){
+ fetch("/api/status?id="+id).then(r=>r.json()).then(d=>{
+  const m=MSG[d.status]||MSG.pending;$("st").textContent=m[0];$("st").className="status "+m[1];
+  if(d.status==="paid")return stats();
+  if(d.status==="pending"&&n<180)setTimeout(()=>poll(id,n+1),5000);
+  else if(d.status==="pending")$("st").textContent="O provedor ainda está processando. Volte mais tarde e confira a arrecadação.";
+ }).catch(()=>setTimeout(()=>poll(id,n+1),8000));
+}
+</script>
+</body>
+</html>
